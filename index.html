@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MOHAMMEDYASIN | Portfolio</title>
+    <style>
+        /* Global Styles */
+        :root {
+            --primary-color: #3498db;
+            --secondary-color: #2c3e50;
+            --light-color: #ecf0f1;
+            --dark-color: #2c3e50;
+            --accent-color: #e74c3c;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            line-height: 1.6;
+            color: var(--dark-color);
+            background-color: var(--light-color);
+        }
+        
+        a {
+            text-decoration: none;
+            color: var(--primary-color);
+        }
+        
+        ul {
+            list-style: none;
+        }
+        
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 0 2rem;
+            overflow: hidden;
+        }
+        
+        /* Header */
+        #header {
+            background: var(--secondary-color);
+            color: white;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+        
+        #header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        #header h1 {
+            font-size: 1.8rem;
+        }
+        
+        #header h1 span {
+            color: var(--primary-color);
+        }
+        
+        #header nav ul {
+            display: flex;
+        }
+        
+        #header nav ul li {
+            margin-left: 2rem;
+        }
+        
+        #header nav ul li a {
+            color: white;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        #header nav ul li a:hover {
+            color: var(--primary-color);
+        }
+        
+        /* Hero Section */
+        #hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(rgba(44, 62, 80, 0.8), rgba(44, 62, 80, 0.8)), url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+            color: white;
+            text-align: center;
+            padding-top: 80px;
+        }
+        
+        #hero .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        #hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        #hero h1 span {
+            color: var(--primary-color);
+        }
+        
+        #hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: var(--primary-color);
+            color: white;
+            padding: 0.8rem 2rem;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .btn:hover {
+            background: #2980b9;
+            transform: translateY(-3px);
+        }
+        
+        /* About Section */
+        #about {
+            padding: 5rem 0;
+            background: white;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: var(--secondary-color);
+        }
+        
+        .section-title span {
+            color: var(--primary-color);
+        }
+	#about .about-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 3rem;
+            align-items: center;
+        }
+        
+        #about .about-img {
+            border-radius: 50%;
+            width: 250px;
+            height: 250px;
+            object-fit: cover;
+            border: 5px solid var(--primary-color);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        #about .about-text h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: var(--secondary-color);
+        }
+        
+        #about .about-text p {
+            margin-bottom: 1rem;
+        }
+        
+        /* Skills Section */
+        #skills {
+            padding: 5rem 0;
+            background: var(--light-color);
+        }
+        
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        
+        .skill {
+            background: white;
+            padding: 2rem;
+            border-radius: 5px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        
+        .skill:hover {
+            transform: translateY(-10px);
+        }
+        
+        .skill i {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        
+        .skill h3 {
+            margin-bottom: 1rem;
+        }
+        
+        /* Projects Section */
+        #projects {
+            padding: 5rem 0;
+            background: white;
+        }
+        
+        .projects-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .project {
+            background: var(--light-color);
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .project:hover {
+            transform: translateY(-10px);
+        }
+        
+        .project img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .project-info {
+            padding: 1.5rem;
+        }
+        
+        .project-info h3 {
+            margin-bottom: 0.5rem;
+        }
+        
+        .project-info p {
+            margin-bottom: 1rem;
+        }
+        
+        /* Contact Section */
+        #contact {
+            padding: 5rem 0;
+            background: var(--light-color);
+        }
+        
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            padding: 2rem;
+            border-radius: 5px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+        
+        .form-group textarea {
+            height: 150px;
+        }
+        
+        /* Footer */
+        #footer {
+            background: var(--secondary-color);
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+        
+        .social-links {
+            margin: 1rem 0;
+        }
+        
+        .social-links a {
+            color: white;
+            margin: 0 0.5rem;
+            font-size: 1.5rem;
+	transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            color: var(--primary-color);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            #header .container {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            #header nav ul {
+                margin-top: 1rem;
+            }
+            
+            #hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            #about .about-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            
+            #about .about-img {
+                margin: 0 auto;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header id="header">
+        <div class="container">
+            <h1><span>MOHAMMED</span>YASIN</h1>
+            <nav>
+                <ul>
+                    <li><a href="#hero">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero">
+        <div class="hero-content">
+            <h1>Hi, I'm <span>MOHAMMEDYASIN</span></h1>
+            <p>A passionate developer dedicated to creating innovative solutions</p>
+            <a href="#projects" class="btn">View My Work</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <h2 class="section-title">About <span>Me</span></h2>
+            <div class="about-content">
+                <img src="mame2.jpg" alt="MOHAMMEDYASIN" class="about-img">
+                <div class="about-text">
+                    <h3>Who Am I?</h3>
+                    <p>I'm MOHAMMEDYASIN, a skilled developer with expertise in web development and programming. I have a strong passion for creating efficient, scalable, and user-friendly applications.</p>
+                    <p>With several years of experience in the field, I've worked on various projects ranging from simple websites to complex web applications. I'm constantly learning new technologies to stay at the forefront of the industry.</p>
+                    <p>When I'm not coding, you can find me exploring new technologies, contributing to open-source projects, or mentoring aspiring developers.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <div class="container">
+            <h2 class="section-title">My <span>Skills</span></h2>
+            <div class="skills-container">
+                <div class="skill">
+                    <i class="fas fa-code"></i>
+                    <h3>Web Development</h3>
+                    <p>HTML, CSS, JavaScript, React, Node.js, and more to build responsive and interactive websites.</p>
+                </div>
+                <div class="skill">
+                    <i class="fas fa-mobile-alt"></i>
+                    <h3>Responsive Design</h3>
+                    <p>Creating websites that work perfectly on all devices from desktop to mobile.</p>
+                </div>
+                <div class="skill">
+                    <i class="fas fa-database"></i>
+                    <h3>Database Management</h3>
+                    <p>MySQL, MongoDB, and other database systems to store and manage application data.</p>
+                </div>
+                <div class="skill">
+                    <i class="fas fa-server"></i>
+                    <h3>Backend Development</h3>
+                    <p>Building robust server-side applications with various frameworks and technologies.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+<!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <h2 class="section-title">Contact <span>Me</span></h2>
+            <div class="contact-form">
+                <form>
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" name="subject" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+                    <button type="submit" class="btn">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="footer">
+        <div class="container">
+            <h3>MOHAMMEDYASIN</h3>
+            <p>Connect with me on social media</p>
+            <div class="social-links">
+                <a href="https://t.me/Yasinmame"><i class="fab fa-telegram"></i></a>
+                <a href="https://www.instagram.com/yasinn_mame?igsh=MWthaWE2dW42NHd2OA=="><i class="fab fa-instagram"></i></a>
+                <a href="https://x.com/YasinMame215804?t=OWTtPakegmcPGgbfvEBXAg&s=09"><i class="fab fa-twitter"></i></a>
+            </div>
+            <p>&copy; 2023 MOHAMMEDYASIN. All Rights Reserved.</p>
+        </div>
+        
+    </footer>
+</body>
+</html>
